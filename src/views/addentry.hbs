@@ -3,4 +3,25 @@
 
 
 
-<h1>Add Entry Page</h1>
+<h1>Add an Entry</h1>
+
+<div class="addform">
+    <div>
+        <form action="/addentry" , method="POST">
+            <label for="input" name="title">Add title:</label><br>
+            <input type="text" id="title" name="title"><br>
+            <label for="input" name="author">Add Author: </label><br>
+            <input type="text" id="author" name="author"><br>
+            <label for="input" name="genre">Add Genre: </label><br>
+            <input type="text" id="genre" name="genre"><br>
+            <label for="input" name="pages">Add number of pages: </label><br>
+            <input type="text" id="pages" name="pages"><br>
+            <input type="submit" id="addsubmit" value="Add">
+        </form>
+        <ul>
+            <ul class="books">
+
+            </ul>
+        </ul>
+        <p style="color:rgb(126, 103, 103);">{{errorMsg}}</p>
+    </div>

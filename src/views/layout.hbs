@@ -17,7 +17,7 @@
                 <h1>Library</h1>
             </div>
             <div class="userinfo">
-                <form action="//members.osiolabs.com/login" method="post">
+                <form action="/home" method="post">
                     Username:<br>
                     <input type="text" name="username" placeholder="Username" required><br>
                     Password:<br>
@@ -36,16 +36,25 @@
                 <a href="/addentry">Add</a>
                 <a href="/deleteentry">Delete</a>
                 <a href="/search">Search</a>
-
             </div>
-
-
-            <div class="eachpagedisplay">
-                {{{body}}}
+            <div class="displayandresults">
+                <div class="addresults">
+                    <h1>Entries</h1>
+                    {{#each result}}
+                    <div class="card">
+                        <li>Title: {{title}} <br>
+                            Author: {{author}} <br>
+                            Genre: {{genre}}<br>
+                            Pages: {{pages}}</li>
+                    </div>
+                    {{/each}}
+                </div>
+                <div class="eachpagedisplay">
+                    {{{body}}}
+                </div>
 
             </div>
         </div>
-
     </div>
 
 </body>

@@ -6,4 +6,7 @@ const mongoose = require('mongoose');
 // if so I need to do Users
 
 
-const Person = mongoose.model('Books');
+
+
+
+const bookcollection = mongoose.model('Posts');

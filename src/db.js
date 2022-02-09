@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Schema for 'Posts' Collection
-const Books = new mongoose.Schema({
+const Posts = new mongoose.Schema({
     title: String,
     author: String,
     genre: String,
@@ -26,8 +26,8 @@ const Books = new mongoose.Schema({
 
 
 
-mongoose.model('books', Books);
+mongoose.model('Posts', Posts);
 // mongoose.model('users', Users);
 
 //connection ... we'll connect it locally for now
-mongoose.connect('mongodb://localhost/library');
+mongoose.connect('mongodb://localhost/libraryProject');

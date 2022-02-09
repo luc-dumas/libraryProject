@@ -1,20 +1,11 @@
 {{body}}
 
+<div class="deletepage">
+    <h1>Delete an Entry</h1>
 
-<h1>Delete an Entry</h1>
-
-<form action="/deletepage" , method="GET">
-    <label for="site-search">Delete Book Entry by Title:</label>
-    <input type="input" id="delete" name="delete" aria-label="delete">
-    <button>Delete</button>
-</form>
-
-<ul>
-    <ul class="books">
-        {{#each result}}
-        <div class="card">
-            <li>Title: {{title}}, <br> Author: {{author}},<br> Pages: {{pages}}</li>
-        </div>
-        {{/each}}
-    </ul>
-</ul>
+    <form action="/deleteentry" , method="GET">
+        <label for="site-search">Delete Book Entry by Title:</label>
+        <input type="input" id="delete" name="delete" aria-label="delete">
+        <button>Delete</button>
+    </form>
+</div>

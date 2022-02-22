@@ -73,7 +73,6 @@ app.get('/deleteentry', (req, res) => {
             result.map(function callback(value, err) {
                 console.log(value.title);
                 console.log(err);
-
             })
             res.render('deleteentry', { 'result': result });
             if (err) {
@@ -160,6 +159,7 @@ app.get('/addentry', (req, res) => {
     }
 })
 
+
 // Adding entries to the library
 app.post('/addentry', (req, res) => {
     insert(req.body.title, req.body.author, req.body.genre, req.body.pages,
@@ -191,7 +191,7 @@ app.post('/addentry', (req, res) => {
 
     }
 })
-
+//
 
 
 

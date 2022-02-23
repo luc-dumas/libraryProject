@@ -1,3 +1,4 @@
+const { application } = require('express');
 const mongoose = require('mongoose');
 
 // Schema for 'Posts' Collection
@@ -16,4 +17,8 @@ mongoose.model('Posts', Posts);
 
 
 
-mongoose.connect('mongodb://localhost/libraryProject');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/libraryProject');
+
+// if (process.env.NODE_ENV === "production") {
+//     app.use(express.static('libraryProject/src'));
+// }

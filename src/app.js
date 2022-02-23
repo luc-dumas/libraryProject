@@ -12,6 +12,10 @@ const Posts = mongoose.model('Posts');
 // View Engine
 app.set('view engine', 'hbs');
 
+
+
+
+
 // Middleware
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -181,4 +185,4 @@ app.post('/addentry', (req, res) => {
 
 
 
-app.listen(process.env.PORT || 8000);
+app.listen(process.env.PORT || 9000);

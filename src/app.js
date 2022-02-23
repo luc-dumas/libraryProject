@@ -6,7 +6,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const db = require('./db');
 const mongoose = require('mongoose');
-const { insert } = require('ramda');
+// const { insert } = require('ramda');
 const Posts = mongoose.model('Posts');
 
 // View Engine
@@ -183,6 +183,8 @@ app.post('/addentry', (req, res) => {
     }
 })
 
-
-
-app.listen(process.env.PORT || 9000);
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 8000; // app to listen in local
+}
+app.listen(port);

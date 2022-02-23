@@ -180,7 +180,8 @@ app.post('/addentry', (req, res) => {
 })
 
 
-
-
-const port = process.env.PORT || 6000;
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 8000;
+}
 app.listen(port);

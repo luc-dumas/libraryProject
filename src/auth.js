@@ -1,6 +1,3 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-
-
-
-const bookcollection = mongoose.model('Books');
+const bookcollection = mongoose.model("Books");

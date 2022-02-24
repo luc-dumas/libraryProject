@@ -9,7 +9,12 @@ const mongoose = require('mongoose');
 // const { insert } = require('ramda');
 const Books = mongoose.model('books');
 
+
+
+
 // View Engine
+
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 

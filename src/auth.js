@@ -3,4 +3,4 @@ const mongoose = require('mongoose');
 
 
 
-const bookcollection = mongoose.model('Posts');
+const bookcollection = mongoose.model('Books');

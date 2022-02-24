@@ -2,7 +2,7 @@ const { application } = require('express');
 const mongoose = require('mongoose');
 
 // Schema for 'Posts' Collection
-const Posts = new mongoose.Schema({
+const Books = new mongoose.Schema({
     title: String,
     author: String,
     genre: String,
@@ -13,12 +13,8 @@ const Posts = new mongoose.Schema({
 
 
 
-mongoose.model('Posts', Posts);
+mongoose.model('books', Books);
 
 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/libraryProject');
-
-// if (process.env.NODE_ENV === "production") {
-//     app.use(express.static('libraryProject/src'));
-// }
+mongoose.connect('mongodb+srv://lucdumas007:brandonborden@cluster0.msigl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')

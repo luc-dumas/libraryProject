@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const db = require('./db');
 const mongoose = require('mongoose');
 // const { insert } = require('ramda');
-const Posts = mongoose.model('Posts');
+const Books = mongoose.model('books');
 
 // View Engine
 app.set('view engine', 'hbs');
@@ -37,7 +37,7 @@ const test = "";
 app.get('/', (req, res) => {
     let title = req.query.search;
     if (title === "" || !title) {
-        Posts.find(function (err, result) {
+        Books.find(function (err, result) {
             result.map(function callback(value, err) {
                 console.log(value.title);
                 console.log(err);
@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
             }
         })
     } else {
-        Posts.find({ "title": title }, function (err, result) {
+        Books.find({ "title": title }, function (err, result) {
             result.map(function callback(value, err) {
                 console.log(value.title);
                 console.log(err);
@@ -66,7 +66,7 @@ app.get('/', (req, res) => {
 app.get('/deleteentry', (req, res) => {
     let title = req.query.delete;
     if (title === "" || !title) {
-        Posts.find(function (err, result) {
+        Books.find(function (err, result) {
             result.map(function callback(value, err) {
                 console.log(value.title);
                 console.log(err);
@@ -77,7 +77,7 @@ app.get('/deleteentry', (req, res) => {
             }
         })
     } else {
-        Posts.deleteOne({ "title": title }, function (err, result) {
+        Books.deleteOne({ "title": title }, function (err, result) {
             res.redirect("/deleteentry");
             if (err) {
                 console.log("Error")
@@ -92,7 +92,7 @@ app.get('/deleteentry', (req, res) => {
 app.get('/search', (req, res) => {
     let title = req.query.search;
     if (title === "" || !title) {
-        Posts.find(function (err, result) {
+        Books.find(function (err, result) {
             result.map(function callback(value, err) {
                 console.log(value.title);
                 console.log(err);
@@ -104,7 +104,7 @@ app.get('/search', (req, res) => {
             }
         })
     } else {
-        Posts.find({ "title": title }, function (err, result) {
+        Books.find({ "title": title }, function (err, result) {
             result.map(function callback(value, err) {
                 console.log(value.title);
                 console.log(err);
@@ -125,7 +125,7 @@ app.get('/register', (req, res) => {
 app.get('/addentry', (req, res) => {
     let title = req.query.search;
     if (title === "" || !title) {
-        Posts.find(function (err, result) {
+        Books.find(function (err, result) {
             result.map(function callback(value, err) {
                 console.log(value.title);
                 console.log(err);
@@ -137,7 +137,7 @@ app.get('/addentry', (req, res) => {
             }
         })
     } else {
-        Posts.find({ "title": title }, function (err, result) {
+        Books.find({ "title": title }, function (err, result) {
             result.map(function callback(value, err) {
                 console.log(value.title);
                 console.log(err);
@@ -166,7 +166,7 @@ app.post('/addentry', (req, res) => {
             res.redirect('/addentry');
         })
     function insert(title, author, genre, pages, errorCallback, successCallback) {
-        const newBook = new Posts({
+        const newBook = new Books({
             title: title,
             author: author,
             genre: genre,

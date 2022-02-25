@@ -1,13 +1,13 @@
 // Imports
-const express = require("express");
 
+const express = require("express");
 const app = express(); // middleware
 const path = require("path");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const db = require("./db");
-// const { insert } = require('ramda');
+
 
 const Books = mongoose.model("books");
 
@@ -34,7 +34,7 @@ app.use(
 // Routing
 
 const test = "";
-
+// Home
 app.get("/", (req, res) => {
   const title = req.query.search;
   if (title === "" || !title) {
@@ -61,7 +61,7 @@ app.get("/", (req, res) => {
     });
   }
 });
-
+// Delete
 app.get("/deleteentry", (req, res) => {
   const title = req.query.delete;
   if (title === "" || !title) {
@@ -84,7 +84,7 @@ app.get("/deleteentry", (req, res) => {
     });
   }
 });
-
+// Search
 app.get("/search", (req, res) => {
   const title = req.query.search;
   if (title === "" || !title) {
@@ -114,7 +114,7 @@ app.get("/search", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register", { test });
 });
-
+// Add Entry - GET router to be handle POSTS
 app.get("/addentry", (req, res) => {
   const title = req.query.search;
   if (title === "" || !title) {

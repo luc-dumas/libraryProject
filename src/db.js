@@ -1,7 +1,7 @@
 const { application } = require("express");
 const mongoose = require("mongoose");
 
-// Schema for 'Posts' Collection
+// Schema for 'Books' Collection
 const Books = new mongoose.Schema({
   title: String,
   author: String,
